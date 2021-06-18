@@ -27,4 +27,12 @@ class PostsViewModel: ObservableObject {
             }
         })
     }
+    
+    func deletePost(at offsets: IndexSet) {
+        posts.remove(atOffsets: offsets)
+    }
+    
+    func moveItem(from source: IndexSet, to destination: Int) {
+        posts.move(fromOffsets: source, toOffset: destination)
+    }
 }
