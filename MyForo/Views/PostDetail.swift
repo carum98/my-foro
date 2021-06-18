@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct PostDetail: View {
+    let post : Post
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(post.body)
     }
 }
 
 struct PostDetail_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetail()
+        PostDetail(post: Post(userId: 1, id: 1, title: "Post Title", body: "asd asdf asdf asdfa asdfada"))
     }
 }

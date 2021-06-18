@@ -7,19 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7317411267C589D00263BA4 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731740F267C589D00263BA4 /* ApiError.swift */; };
+		F7317412267C589D00263BA4 /* NetworkGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7317410267C589D00263BA4 /* NetworkGeneric.swift */; };
+		F7317416267C58AA00263BA4 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7317415267C58AA00263BA4 /* Client.swift */; };
 		F75982B8267AEFE5004F179B /* MyForoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75982B7267AEFE5004F179B /* MyForoApp.swift */; };
 		F75982BA267AEFE5004F179B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75982B9267AEFE5004F179B /* ContentView.swift */; };
 		F75982BC267AEFE5004F179B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75982BB267AEFE5004F179B /* Assets.xcassets */; };
 		F75982BF267AEFE5004F179B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75982BE267AEFE5004F179B /* Preview Assets.xcassets */; };
+		F7A41BB0267C59270053BF66 /* PostsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41BAF267C59270053BF66 /* PostsList.swift */; };
+		F7A41BB2267C59420053BF66 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41BB1267C59420053BF66 /* PostsViewModel.swift */; };
+		F7A41BB5267C59800053BF66 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41BB4267C59800053BF66 /* Post.swift */; };
+		F7A41BB9267C63460053BF66 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41BB8267C63460053BF66 /* PostDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F731740F267C589D00263BA4 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		F7317410267C589D00263BA4 /* NetworkGeneric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkGeneric.swift; sourceTree = "<group>"; };
+		F7317415267C58AA00263BA4 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		F75982B4267AEFE5004F179B /* MyForo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyForo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75982B7267AEFE5004F179B /* MyForoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyForoApp.swift; sourceTree = "<group>"; };
 		F75982B9267AEFE5004F179B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F75982BB267AEFE5004F179B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F75982BE267AEFE5004F179B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F75982C0267AEFE5004F179B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7A41BAF267C59270053BF66 /* PostsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsList.swift; sourceTree = "<group>"; };
+		F7A41BB1267C59420053BF66 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		F7A41BB4267C59800053BF66 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F7A41BB8267C63460053BF66 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +47,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F731740E267C589D00263BA4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F731740F267C589D00263BA4 /* ApiError.swift */,
+				F7317410267C589D00263BA4 /* NetworkGeneric.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F7317414267C58AA00263BA4 /* NetworkEndpoints */ = {
+			isa = PBXGroup;
+			children = (
+				F7317415267C58AA00263BA4 /* Client.swift */,
+			);
+			path = NetworkEndpoints;
+			sourceTree = "<group>";
+		};
 		F75982AB267AEFE4004F179B = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +83,11 @@
 		F75982B6267AEFE5004F179B /* MyForo */ = {
 			isa = PBXGroup;
 			children = (
+				F7A41BB3267C596A0053BF66 /* Models */,
+				F7A41BAE267C59040053BF66 /* Views */,
+				F7A41BAD267C58F60053BF66 /* ViewModel */,
+				F7317414267C58AA00263BA4 /* NetworkEndpoints */,
+				F731740E267C589D00263BA4 /* Network */,
 				F75982B7267AEFE5004F179B /* MyForoApp.swift */,
 				F75982B9267AEFE5004F179B /* ContentView.swift */,
 				F75982BB267AEFE5004F179B /* Assets.xcassets */,
@@ -67,6 +103,31 @@
 				F75982BE267AEFE5004F179B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F7A41BAD267C58F60053BF66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F7A41BB1267C59420053BF66 /* PostsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F7A41BAE267C59040053BF66 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7A41BAF267C59270053BF66 /* PostsList.swift */,
+				F7A41BB8267C63460053BF66 /* PostDetail.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F7A41BB3267C596A0053BF66 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F7A41BB4267C59800053BF66 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +200,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F75982BA267AEFE5004F179B /* ContentView.swift in Sources */,
+				F7A41BB9267C63460053BF66 /* PostDetail.swift in Sources */,
+				F7A41BB0267C59270053BF66 /* PostsList.swift in Sources */,
 				F75982B8267AEFE5004F179B /* MyForoApp.swift in Sources */,
+				F7317412267C589D00263BA4 /* NetworkGeneric.swift in Sources */,
+				F7317416267C58AA00263BA4 /* Client.swift in Sources */,
+				F7317411267C589D00263BA4 /* ApiError.swift in Sources */,
+				F7A41BB2267C59420053BF66 /* PostsViewModel.swift in Sources */,
+				F7A41BB5267C59800053BF66 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

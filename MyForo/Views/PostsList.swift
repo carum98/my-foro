@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct PostsList: View {
+    @ObservedObject var viewModel : PostsViewModel = PostsViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            List {
+                ForEach(self.viewModel.posts, id: \.id) { item in
+                    NavigationLink(
+                        destination: PostDetail(post: item),
+                        label: {
+                            Text(item.title)
+                        })
+                }
+            }
+            .navigationBarTitle("MyForo")
+            .navigationBarItems(trailing: EditButton())
+            .onAppear {
+                viewModel.fetchPosts()
+            }
+        }
     }
 }
 
