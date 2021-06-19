@@ -32,7 +32,8 @@ class PostsViewModel: ObservableObject {
     func createPost(post : Post) {
         client.createPost(post: post, complete: { result in
             switch result {
-            case .success(let data):
+            case .success(var data):
+                data.id = self.posts.count + 1
                 self.posts.insert(data, at: 0)
             case .failure(let error):
                 print(error)

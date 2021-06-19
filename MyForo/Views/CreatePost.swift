@@ -13,6 +13,8 @@ struct CreatePost: View {
     @State var titlePost : String = ""
     @State var bodyPost : String = ""
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
             Form {
@@ -27,10 +29,10 @@ struct CreatePost: View {
         }
         .navigationBarTitle("New Post")
         .navigationBarItems(trailing:
-            Button(action: createPost, label: {
-                Text("Save")
-            }
-        ))
+            Button(action: createPost, label: { Text("Save") }
+            )
+            .disabled(titlePost.isEmpty || bodyPost.isEmpty)
+        )
     }
     
     func createPost() {
@@ -42,6 +44,8 @@ struct CreatePost: View {
         )
         
         viewModel.createPost(post: post)
+        
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 
