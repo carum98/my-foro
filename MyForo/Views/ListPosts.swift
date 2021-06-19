@@ -24,16 +24,16 @@ struct ListPosts: View {
                 .onDelete(perform: viewModel.deletePost)
             }
             .navigationBarTitle("Posts")
-            .navigationBarItems(leading: EditButton(), trailing: addButton)
-            .onAppear {
-                viewModel.fetchPosts()
-            }
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing: addButton
+            )
         }
     }
     
     private var addButton : some View {
         NavigationLink(
-            destination: CreatePost(),
+            destination: CreatePost(viewModel: viewModel),
             label: {
                 HStack {
                     Image(systemName: "paperplane.circle")

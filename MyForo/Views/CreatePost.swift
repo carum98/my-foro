@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CreatePost: View {
+    @ObservedObject var viewModel : PostsViewModel
+    
     @State var titlePost : String = ""
     @State var bodyPost : String = ""
     
@@ -25,15 +27,26 @@ struct CreatePost: View {
         }
         .navigationBarTitle("New Post")
         .navigationBarItems(trailing:
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: createPost, label: {
                 Text("Save")
             }
         ))
+    }
+    
+    func createPost() {
+        let post = Post(
+            userId: 1,
+            id: 0,
+            title: titlePost,
+            body: bodyPost
+        )
+        
+        viewModel.createPost(post: post)
     }
 }
 
 struct CreatePost_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePost()
+        CreatePost(viewModel: PostsViewModel())
     }
 }

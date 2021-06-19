@@ -15,6 +15,7 @@ class PostsViewModel: ObservableObject {
     
     init() {
         client = Client(session: self.session)
+        fetchPosts()
     }
     
     func fetchPosts() {
@@ -22,6 +23,17 @@ class PostsViewModel: ObservableObject {
             switch result {
             case .success(let data):
                 self.posts = data
+            case .failure(let error):
+                print(error)
+            }
+        })
+    }
+    
+    func createPost(post : Post) {
+        client.createPost(post: post, complete: { result in
+            switch result {
+            case .success(let data):
+                self.posts.insert(data, at: 0)
             case .failure(let error):
                 print(error)
             }

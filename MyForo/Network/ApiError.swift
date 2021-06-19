@@ -1,8 +1,8 @@
 //
 //  ApiError.swift
-//  PlaylistReader
+//  MyForo
 //
-//  Created by David Cortes on 14/6/21.
+//  Created by Carlos Eduardo Umaña Acevedo on 17/6/21.
 //
 
 import Foundation

@@ -1,8 +1,8 @@
 //
 //  NetworkGeneric.swift
-//  PlaylistReader
+//  MyForo
 //
-//  Created by David Cortes on 14/6/21.
+//  Created by Carlos Eduardo Umaña Acevedo on 17/6/21.
 //
 
 import Foundation
@@ -22,7 +22,7 @@ extension NetworkGeneric {
                 return
             }
             
-            guard httpResponse.statusCode == 200 else {
+            guard httpResponse.statusCode == 200 || httpResponse.statusCode == 201 else {
                 complete(.failure(.responseUnsuccessful(description: "status code = \(httpResponse.statusCode)")))
                 return
             }
@@ -34,6 +34,10 @@ extension NetworkGeneric {
             
             do {
                 let decoder = JSONDecoder()
+                
+//                let str = String(decoding: data, as: UTF8.self)
+//                print(str)
+                
                 let genericModel = try decoder.decode(T.self, from: data)
                 complete(.success(genericModel))
             }catch let error {
